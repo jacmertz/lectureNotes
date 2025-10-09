@@ -4,14 +4,13 @@ import org.sireum._
 import org.sireum.justification._
 import org.sireum.justification.natded.prop._
 
-
-
-@pure def imply1(p: B, q: B, r: B): Unit = {
+//proves the contrapositive
+@pure def not3(p: B, q: B, r: B): Unit = {
   Deduce(
-    ( p & q __>: r, p __>: q, p ) |- ( r )
+    ( p __>: q ) |- ( !q __>: !p  )
       Proof(
-        //PROOF GOES HERE
-        
+      1 (  p __>: q ) by Premise,
+
     )
   )
 }
