@@ -79,8 +79,10 @@ Valid or not?
 /////////////////////////////////
 
 soundness ?
+    all arguments proved with deduction were actually true
 
 completeness ?
+    predicate logic will be incomplete
 
 /////////////////////////////////
 
@@ -114,6 +116,7 @@ In Logika, ∃ x P(x) is written as:
 
 
 --> what is "T"?
+
 
 
 Settings->Command Palette->Tasks (run task)->Sireum slang template->
