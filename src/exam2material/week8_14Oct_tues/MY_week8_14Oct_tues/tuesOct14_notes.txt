@@ -17,13 +17,17 @@ Today:
 
 Reminder:
 
-AllE - use when we have a specific individual, can plug into 
-    any for all statement
+AllE - when can we use?
+        need a for all statement already
+        need an individual 
+        use AllE to make that statement about our individual
 
-AllI - subproof (starts with "Let"), choosing random individual
-    end subproof with a statement about our random individual
-    right after subproof ends, claim same statement about All
-    individuals
+AllI - when do we use? idea?
+        involves a subproof
+        let, start by naming a random individual
+        goal: reach statement about individual
+        afterwards: introduce a for all statement in the same form
+            as what I showed about the individual 
 
 ////////////////////////
 
@@ -42,7 +46,7 @@ If we find ONE individual in a domain where a statement holds
 
 ///
 
-Rule definition:
+Rule definition: 
 
                   P(v)
 ExistsI[T]: ---------------------
@@ -86,7 +90,7 @@ in-class quiz
 ///////////////////////
 
 Exam 2:
-- Thursday, March 13 9:30-10:45
+- Thursday, October 16 9:30-10:45
 - Closed notes, closed computers
 - All "open-ended" problems - similar to HW 4-6
 

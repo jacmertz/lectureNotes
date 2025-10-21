@@ -23,7 +23,54 @@ import org.sireum.justification.natded.prop._
       2 ( ∀((x: T) => (Q(x) __>: C(x)  )) ) by Premise,
       3 ( ∀((x: T) => (R(x) __>: !B(x) & !C(x)  )) ) by Premise,
 
-      
+      //goalL for all statement, use AllI
+
+      4 Let ((a: T) => Subproof(
+        5 SubProof(
+          6 Assume ( P(a) v Q(a) ),
+          
+          7 SubProof (
+            8 Assume ( R(a) ),
+            
+            //plug a into all premises
+
+            9 ( P(a) __>: B(a) ) by AllE[T](1),
+            10 ( Q(a) => C(a) ) by AllE[T](2)
+            11 ( R(a) => !B(a) && ! (C(a)) ) by AllE[T](3)
+            12 ( !B(a) && !C(a) ) by ImplyE(11, 8)
+            13 ( !B(a) ) by AndE1(12)
+            14 ( !C(a) ) by AndE2(12)
+
+            //use OrE to show contradicition with both P(a) and Q(a)
+            15 SubProof (
+              16 Assume (P(a))
+              17 ( B(a) ) by ImpleE(9, 16)
+              18 (F) by NegE(17, 13)
+
+              //goal: F
+            ),
+            19 SubProof (
+              20 Assume ( Q(a) )
+              21 ( C(a) ) by ImplyE(10, 20)
+              22 ( F ) by NegE(21, 14)
+            ),
+            23 ( F ) by OrE(6, 15, 19)
+
+            //goal: False
+          ),
+          24 ( !R(a) ) by NegI(7)
+
+          //use NegI
+          //goal !R(a)
+        ),
+        25 ( P(a) v Q(a) => !R(a) ) by ImplyI(5) 
+
+        //use ImplyI
+        //goal: (P(a) v Q(a) => !R(a)  )
+      )),
+      26 ( ∀((x: T) => (P(x) | Q(x) __>: !R(x)  )) ) by AllI[T](4)
+
+      //use: AllI
     )
   )
 }
